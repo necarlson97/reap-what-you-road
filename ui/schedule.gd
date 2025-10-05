@@ -68,3 +68,8 @@ func restart_day() -> void:
 		start_day()
 	else:
 		end_day()
+		
+func _process(delta: float) -> void:
+	# If there's only people, let em edit
+	if(get_tree().get_nodes_in_group("cars").size() == 0):
+		ToolState.is_disabled = false

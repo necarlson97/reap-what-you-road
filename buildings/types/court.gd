@@ -29,7 +29,7 @@ func spawn_agents(parent: Node2D) -> Array[Agent]:
 
 func get_description() -> String:
 	return """
-Cour:
+Cout:
 	* First, summons a slow-driver from all mansions
 	* Then, summons a slow-walker to from all appartments
 	* Then, sends a fast-driver to all apparments AND mansions

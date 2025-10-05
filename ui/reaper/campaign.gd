@@ -37,8 +37,10 @@ func _ready() -> void:
 	steps = [
 		"This is your trial - young reaper.\nCollect enough sould to advance the stages.",
 		"If you make it to 10 - you will have graduated, and eared this town to reap all your own.",
+		"Remember: yellow is just a fender-bender. You need to have them hit harder.",
+		"Teal is speedy, purples are the drunks and distracted - you got this, kid.",
 		func(): _close_button(),
-		"Can you make it all the way?\nGood luck young reaper."
+		"Can you make it all the way to 10?\nGood luck young reaper."
 	]
 
 	# Hook KillCount stage changes

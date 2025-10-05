@@ -88,6 +88,8 @@ func _fade(visible_in: bool) -> void:
 func _goto(scene_path: String) -> void:
 	if scene_path.is_empty(): return
 	close()
+	ToolState.is_dragging = false
+	ToolState.is_disabled = false
 	Menu.btn_menu.visible = true
 	Menu.btn_resume.visible = true
 	get_tree().change_scene_to_file(scene_path)
