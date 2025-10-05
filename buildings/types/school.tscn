@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc6m0dn3s6d56"]
+
+[ext_resource type="Texture2D" uid="uid://cddfx0suvuu2u" path="res://assets/school.svg" id="1_uon70"]
+[ext_resource type="Script" uid="uid://gankqubalje4" path="res://buildings/types/school.gd" id="1_wi6ti"]
+[ext_resource type="Script" uid="uid://d1tcuun2h06bj" path="res://buildings/draggable.gd" id="2_wi6ti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnl3"]
+size = Vector2(100, 100)
+
+[node name="School" type="Node2D"]
+script = ExtResource("1_wi6ti")
+
+[node name="Draggable" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("2_wi6ti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+shape = SubResource("RectangleShape2D_fdnl3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_uon70")

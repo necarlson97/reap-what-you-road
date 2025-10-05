@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdjsxdqy2ykt"]
+
+[ext_resource type="Script" uid="uid://citrvdd2cekca" path="res://ui/hover_info.gd" id="1_6jvvt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jvvt"]
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.9019608)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="HoverInfo" type="CanvasLayer"]
+script = ExtResource("1_6jvvt")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 100)
+anchors_preset = -1
+anchor_right = 0.3949653
+anchor_bottom = 0.15432099
+offset_right = -55.0
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6jvvt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+text = "Testing
+Testing
+Testing
+TestingTesting"

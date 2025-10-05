@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://rxelfqrrckve"]
+
+[ext_resource type="Script" uid="uid://cwpigc3g06ie1" path="res://buildings/home.gd" id="1_ng7kp"]
+[ext_resource type="Script" uid="uid://d1tcuun2h06bj" path="res://buildings/draggable.gd" id="2_37kmm"]
+[ext_resource type="Texture2D" uid="uid://d8vbcoe8id44" path="res://assets/appartment.svg" id="3_ng7kp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnl3"]
+size = Vector2(100, 100)
+
+[node name="Home" type="Node2D"]
+script = ExtResource("1_ng7kp")
+home_name = "Appartment"
+
+[node name="Draggable" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("2_37kmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+shape = SubResource("RectangleShape2D_fdnl3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+self_modulate = Color(1.366, 1.002, 1.002, 1)
+texture = ExtResource("3_ng7kp")

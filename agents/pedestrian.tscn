@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmtmcn4b5qr5x"]
+
+[ext_resource type="Script" uid="uid://brhre25a4www2" path="res://agents/pedestrian.gd" id="1_30ehg"]
+[ext_resource type="Texture2D" uid="uid://cym5vbcahokmk" path="res://assets/pedestrian.svg" id="1_l5u3k"]
+[ext_resource type="Script" uid="uid://cfolcv1x5xpk6" path="res://agents/path_viewer.gd" id="3_dx0je"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5u3k"]
+radius = 5.0
+
+[node name="Pedestrian" type="CharacterBody2D"]
+script = ExtResource("1_30ehg")
+
+[node name="PathViewer" type="Line2D" parent="."]
+script = ExtResource("3_dx0je")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l5u3k")
+
+[node name="Outline" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_l5u3k")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l5u3k")

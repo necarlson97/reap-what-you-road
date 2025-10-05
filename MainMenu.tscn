@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=4 uid="uid://dsggyg8ixmc7q"]
+
+[ext_resource type="PackedScene" uid="uid://f0nm4x1qfmek" path="res://buildings/grid/Grid.tscn" id="1_cqjrg"]
+[ext_resource type="Script" uid="uid://nmod2cdrnrqo" path="res://main_menu.gd" id="1_fimr5"]
+[ext_resource type="PackedScene" uid="uid://bkypou8hxmpxg" path="res://buildings/types/house.tscn" id="2_e2xy7"]
+[ext_resource type="PackedScene" uid="uid://fdt2tugr8p1y" path="res://buildings/types/nightclub.tscn" id="3_e2xy7"]
+[ext_resource type="PackedScene" uid="uid://cc6m0dn3s6d56" path="res://buildings/types/school.tscn" id="3_fimr5"]
+[ext_resource type="Script" uid="uid://bc8bngux4b5vq" path="res://ui/cam_controller.gd" id="6_31qfy"]
+[ext_resource type="PackedScene" uid="uid://dhvyk81r237d2" path="res://buildings/types/mansion.tscn" id="6_e2xy7"]
+[ext_resource type="PackedScene" uid="uid://rxelfqrrckve" path="res://buildings/types/appartment.tscn" id="7_fimr5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fimr5")
+
+[node name="Grid" parent="." instance=ExtResource("1_cqjrg")]
+
+[node name="Roads" parent="Grid" index="2"]
+tile_map_data = PackedByteArray("AAD//wMAAAABAAAAAwAAAAMAAAAAAAAAAgABAAMAAAAAAAAAAgACAAMAAAAAAAAAAgADAAMAAAAAAAMAAAADAAIAAAAAAAAAAAADAAEAAAAAAAAAAQADAAAAAAAAAAAAAQADAP//AAAAAAIAAwACAP//AAABAAAAAwAFAP//AAAAAAIAAQAFAP7/AAAAAAIABAAFAP3/AAAAAAIAAAAFAPz/AAABAAAAAAAEAP3/AAAAAAAAAgADAP3/AAABAAAAAwAHAP7/AAABAAAABAAGAP7/AAAAAAAAAgAEAP//AAAAAAAAAgAFAAAAAAAAAAIABAAKAAAAAAABAAAABAAJAAAAAAAAAAAAAgAIAAAAAAAAAAAAAgAHAAAAAAAAAAAAAgAGAAAAAAAAAAAAAgAFAAEAAAABAAAAAgA=")
+
+[node name="Buildings" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Home" parent="Buildings" instance=ExtResource("2_e2xy7")]
+position = Vector2(327, -247)
+
+[node name="Home4" parent="Buildings" instance=ExtResource("2_e2xy7")]
+position = Vector2(1064, 43)
+
+[node name="Home5" parent="Buildings" instance=ExtResource("2_e2xy7")]
+position = Vector2(563, -386)
+
+[node name="School" parent="Buildings" instance=ExtResource("3_fimr5")]
+position = Vector2(803, -159)
+
+[node name="Home3" parent="Buildings" instance=ExtResource("6_e2xy7")]
+position = Vector2(550, 182)
+
+[node name="Home6" parent="Buildings" instance=ExtResource("7_fimr5")]
+position = Vector2(180, -55)
+
+[node name="Home7" parent="Buildings" instance=ExtResource("7_fimr5")]
+position = Vector2(-96, 351)
+
+[node name="Home8" parent="Buildings" instance=ExtResource("7_fimr5")]
+position = Vector2(247, 455)
+
+[node name="Nightclub" parent="Buildings" instance=ExtResource("3_e2xy7")]
+position = Vector2(846, 159)
+
+[node name="Agents" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(122, 34)
+zoom = Vector2(0.55, 0.55)
+script = ExtResource("6_31qfy")
+
+[editable path="Grid"]

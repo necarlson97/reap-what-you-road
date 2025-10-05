@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=4 uid="uid://loo8obeklgby"]
+
+[ext_resource type="PackedScene" uid="uid://f0nm4x1qfmek" path="res://buildings/grid/Grid.tscn" id="1_j7cu5"]
+[ext_resource type="Script" uid="uid://bc8bngux4b5vq" path="res://ui/cam_controller.gd" id="2_kl0bo"]
+[ext_resource type="PackedScene" uid="uid://bihkek0x8kn1b" path="res://ui/ui.tscn" id="3_ohg8s"]
+[ext_resource type="Script" uid="uid://bdw67lijmcqqt" path="res://ui/ui.gd" id="4_wi37g"]
+[ext_resource type="PackedScene" uid="uid://b6ch77ndf1yau" path="res://buildings/types/bar.tscn" id="5_ohg8s"]
+[ext_resource type="PackedScene" uid="uid://cc6m0dn3s6d56" path="res://buildings/types/school.tscn" id="6_wi37g"]
+[ext_resource type="PackedScene" uid="uid://bkypou8hxmpxg" path="res://buildings/types/house.tscn" id="7_iqnqj"]
+[ext_resource type="PackedScene" uid="uid://dhvyk81r237d2" path="res://buildings/types/mansion.tscn" id="8_r3u75"]
+[ext_resource type="PackedScene" uid="uid://rxelfqrrckve" path="res://buildings/types/appartment.tscn" id="9_a456t"]
+[ext_resource type="PackedScene" uid="uid://cd7o845ajq57f" path="res://buildings/types/court.tscn" id="10_iqnqj"]
+[ext_resource type="PackedScene" uid="uid://d1166mo031o28" path="res://buildings/types/hospital.tscn" id="11_r3u75"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Grid" parent="." instance=ExtResource("1_j7cu5")]
+
+[node name="Roads" parent="Grid" index="2"]
+tile_map_data = PackedByteArray("AAD6/wAAAAABAAAAAwD7/wAAAAAAAAAAAgD8/wAAAAAAAAAAAgD9/wAAAAAAAAAAAgD+/wAAAAAAAAAAAgD//wAAAAAAAAAAAgAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAgABAAAAAAAAAAAAAgADAAAAAAAAAAAAAgAEAAAAAAAAAAAAAgAFAAAAAAABAAAABAA=")
+
+[node name="Buildings" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Agents" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+script = ExtResource("2_kl0bo")
+
+[node name="UI" parent="." instance=ExtResource("3_ohg8s")]
+script = ExtResource("4_wi37g")
+
+[node name="Bar" parent="." instance=ExtResource("5_ohg8s")]
+position = Vector2(-423, -47)
+
+[node name="School" parent="." instance=ExtResource("6_wi37g")]
+position = Vector2(-425, 159)
+
+[node name="Home" parent="." instance=ExtResource("7_iqnqj")]
+position = Vector2(189, -45)
+
+[node name="Home2" parent="." instance=ExtResource("7_iqnqj")]
+position = Vector2(432, -43)
+
+[node name="Home3" parent="." instance=ExtResource("8_r3u75")]
+position = Vector2(198, 154)
+
+[node name="Home4" parent="." instance=ExtResource("9_a456t")]
+position = Vector2(444, 161)
+
+[node name="Court" parent="." instance=ExtResource("10_iqnqj")]
+position = Vector2(-203, -82)
+
+[node name="Hospital" parent="." instance=ExtResource("11_r3u75")]
+position = Vector2(-203, 167)
+
+[node name="Home5" parent="." instance=ExtResource("7_iqnqj")]
+position = Vector2(625, 50)
+
+[editable path="Grid"]
+[editable path="UI"]

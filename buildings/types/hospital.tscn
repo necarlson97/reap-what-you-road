@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1166mo031o28"]
+
+[ext_resource type="Script" uid="uid://dc41cvo0o7xgp" path="res://buildings/types/hospital.gd" id="1_cadn5"]
+[ext_resource type="Script" uid="uid://d1tcuun2h06bj" path="res://buildings/draggable.gd" id="2_j6fnv"]
+[ext_resource type="Texture2D" uid="uid://btrxonutq88g3" path="res://assets/hospital.png" id="3_j6fnv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnl3"]
+size = Vector2(100, 100)
+
+[node name="Hospital" type="Node2D"]
+script = ExtResource("1_cadn5")
+
+[node name="Draggable" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("2_j6fnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+shape = SubResource("RectangleShape2D_fdnl3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_j6fnv")

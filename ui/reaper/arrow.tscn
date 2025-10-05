@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6xmt8u1smjx0"]
+
+[ext_resource type="Script" uid="uid://dkh1r6qxcu6e2" path="res://ui/reaper/arrow.gd" id="1_nj8xm"]
+[ext_resource type="Texture2D" uid="uid://di124nndr77na" path="res://assets/arrow.svg" id="2_fpq1w"]
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_nj8xm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-95, 2)
+texture = ExtResource("2_fpq1w")

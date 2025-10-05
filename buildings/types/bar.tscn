@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6ch77ndf1yau"]
+
+[ext_resource type="Script" uid="uid://ddru66pdvr1qh" path="res://buildings/types/bar.gd" id="1_lh1yd"]
+[ext_resource type="Script" uid="uid://d1tcuun2h06bj" path="res://buildings/draggable.gd" id="2_wbadc"]
+[ext_resource type="Texture2D" uid="uid://bylghh84naxjy" path="res://assets/bar.svg" id="3_lh1yd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnl3"]
+size = Vector2(100, 100)
+
+[node name="Bar" type="Node2D"]
+script = ExtResource("1_lh1yd")
+
+[node name="Draggable" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("2_wbadc")
+snap_to_grid = null
+block_on_solid = null
+hover_only_to_start = null
+lives_on_road = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+shape = SubResource("RectangleShape2D_fdnl3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_lh1yd")

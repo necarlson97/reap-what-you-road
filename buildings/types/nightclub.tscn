@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://fdt2tugr8p1y"]
+
+[ext_resource type="Script" uid="uid://d30ns5kcy7iw7" path="res://buildings/types/nightclub.gd" id="1_7is1h"]
+[ext_resource type="Script" uid="uid://d1tcuun2h06bj" path="res://buildings/draggable.gd" id="2_kmosf"]
+[ext_resource type="Texture2D" uid="uid://np6l5ivn5qk" path="res://assets/nightclub.svg" id="3_kmosf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdnl3"]
+size = Vector2(100, 100)
+
+[node name="Nightclub" type="Node2D"]
+script = ExtResource("1_7is1h")
+
+[node name="Draggable" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("2_kmosf")
+snap_to_grid = null
+block_on_solid = null
+hover_only_to_start = null
+lives_on_road = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable"]
+shape = SubResource("RectangleShape2D_fdnl3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_kmosf")

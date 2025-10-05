@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx7q2lqdx2hvf"]
+
+[ext_resource type="Script" uid="uid://dte0l1u2bjm0x" path="res://agents/car.gd" id="1_haoh1"]
+[ext_resource type="Texture2D" uid="uid://d3kwefy8vm8vl" path="res://assets/car.svg" id="2_haoh1"]
+[ext_resource type="Script" uid="uid://cfolcv1x5xpk6" path="res://agents/path_viewer.gd" id="3_l8i2l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8i2l"]
+height = 40.0
+
+[node name="Car" type="CharacterBody2D"]
+script = ExtResource("1_haoh1")
+
+[node name="PathViewer" type="Line2D" parent="."]
+script = ExtResource("3_l8i2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l8i2l")
+
+[node name="Vision" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="Vision" type="CollisionPolygon2D" parent="Vision"]
+modulate = Color(1, 0.86433333, 0.63, 0.21568628)
+polygon = PackedVector2Array(0, -8, 100, -20, 100, 20, 0, 8)
+
+[node name="Polygon2D" type="Polygon2D" parent="Vision/Vision"]
+polygon = PackedVector2Array(0, -8, 100, -20, 100, 20, 0, 8)
+
+[node name="Outline" type="Sprite2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_haoh1")
+
+[node name="Icon" type="Sprite2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_haoh1")
